@@ -1,0 +1,1 @@
+nohup java -jar app-one-cluster-1-1.0-SNAPSHOT.jar &
