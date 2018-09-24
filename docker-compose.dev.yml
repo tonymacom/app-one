@@ -1,0 +1,19 @@
+version: "3"
+services:
+  app-one:
+    environment:
+      CONFIG_LOGIN_PWD: $CONFIG_LOGIN_PWD
+    build: ./
+    image: itmabo/app-one:latest
+    volumes:
+      - /home/log:/home/log
+    networks:
+      - tonynet-a
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.role==worker]
+networks:
+  tonynet-a:
+    external:
+      name: tonynet

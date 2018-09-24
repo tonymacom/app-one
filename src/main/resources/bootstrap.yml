@@ -5,9 +5,11 @@ spring:
     name: app-one
   cloud:
     config:
-      uri: http://localhost:9706
+      uri: http://config-server:9706
       username: user
       password: ${CONFIG_LOGIN_PWD:12345}
-      fail-fast: true
+      fail-fast: true #连接不上早知道
 server:
   port: 9704
+logging:
+  file: /home/log/app-one.log
