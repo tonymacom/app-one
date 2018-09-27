@@ -3,10 +3,11 @@ services:
   app-one:
     environment:
       CONFIG_LOGIN_PWD: $CONFIG_LOGIN_PWD
-    build: ./
     image: itmabo/app-one:latest
     volumes:
       - /home/log:/home/log
+    ports:
+      - 9704:9704
     networks:
       - tonynet-a
     deploy:
