@@ -2,19 +2,18 @@ version: "3"
 services:
   app-one:
     environment:
-      CONFIG_LOGIN_PWD: $CONFIG_LOGIN_PWD
+      CONFIG_PROFILE: dev
+      CONFIG_LOGIN_PWD: 12345
     image: itmabo/app-one:latest
     volumes:
       - /home/log:/home/log
-    ports:
-      - 9704:9704
-    networks:
-      - tonynet-a
+#    networks:
+#      - tonynet-a
     deploy:
       replicas: 1
       placement:
-        constraints: [node.role==worker]
-networks:
-  tonynet-a:
-    external:
-      name: tonynet
+        constraints: [node.role == worker]
+#networks:
+#  tonynet-a:
+#    external:
+#      name: tonynet
