@@ -1,6 +1,6 @@
 spring:
   profiles:
-      active: ${CONFIG_PROFILE:local}
+    active: ${CONFIG_PROFILE:local}
   application:
     name: app-one
   cloud:
@@ -9,6 +9,11 @@ spring:
       username: user
       password: ${CONFIG_LOGIN_PWD:12345}
       fail-fast: true #连接不上早知道
+  rabbitmq:
+    host: rabbitmq-server
+    port: 5672
+    username: admin
+    password: 123456
 server:
   port: 9704
 logging:

@@ -43,6 +43,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>com.tony.unit</groupId>
             <artifactId>base-filter</artifactId>
             <version>1.0-SNAPSHOT</version>
