@@ -1,0 +1,26 @@
+info:
+  app:
+    name: app-one
+    version: 1.0
+logging:
+  file: /home/log/app-one.log
+management:
+  security:
+    enabled: false
+server:
+  port: 8080
+spring:
+  application:
+    name: app-one
+  cloud:
+    config:
+      profile: ${CONFIG_PROFILE:local}
+      uri: http://config-server:9701
+      username: user
+      fail-fast: true
+      password: ${CONFIG_LOGIN_PWD:12345}
+  rabbitmq:
+    host: rabbitmq-server
+    password: 123456
+    port: 5672
+    username: admin
