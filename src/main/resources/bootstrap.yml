@@ -11,10 +11,10 @@ server:
   port: 8080
 spring:
   application:
-    name: app-one
+    name: app-one #对应${application}部分
   cloud:
     config:
-      profile: ${CONFIG_PROFILE:local}
+      profile: ${CONFIG_PROFILE:local} #对应{profile}部分
       uri: http://config-server:9701
       username: user
       fail-fast: true
