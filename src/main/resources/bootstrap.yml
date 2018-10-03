@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: @CONFIG_PROFILE:local@
+    active: ${CONFIG_PROFILE:local}
   application:
     name: app-one
   cloud:
