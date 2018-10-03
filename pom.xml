@@ -82,10 +82,10 @@
     <build>
         <plugins>
             <!--打包 支持 java -jar命令启动插件-->
-            <!--<plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>-->
+            </plugin>
             <!--组装插件-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
