@@ -2,7 +2,7 @@ version: "3"
 services:
   app-one:
     environment:
-      CONFIG_PROFILE: dev
+      CONFIG_PROFILE: $CONFIG_PROFILE
       CONFIG_LOGIN_PWD: 12345
     image: itmabo/app-one:latest
     volumes:
