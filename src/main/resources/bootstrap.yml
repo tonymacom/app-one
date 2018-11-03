@@ -19,6 +19,9 @@ spring:
       username: user
       fail-fast: true
       password: ${CONFIG_LOGIN_PWD:12345}
+    sentinel:
+      transport:
+        dashboard: localhost:18083 # sentinel dashboard  服务
   rabbitmq:
     host: rabbitmq-server
     port: 5672
