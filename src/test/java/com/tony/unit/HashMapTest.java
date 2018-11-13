@@ -5,7 +5,9 @@ import lombok.Data;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * <br>
@@ -47,6 +49,26 @@ public class HashMapTest {
 
     }
 
+    @Test
+    public void testMap2(){
+
+        HashMap<String,String> maps = new HashMap<>();
+
+        maps.put("Aa", "1111");
+        maps.put("BB", "2222");
+
+        Iterator<Map.Entry<String, String>> entry = maps.entrySet().iterator();
+
+        if(entry.hasNext()){
+            Map.Entry<String, String> enty = entry.next();
+            System.out.println(enty.getKey());
+        }
+
+
+        System.out.println(maps);
+
+
+    }
 
 
     @Data
