@@ -20,7 +20,7 @@ public class HashMapTest {
 
 
     /**
-     * 测试自定义对象hashcode导致map中存储key值相同的元素.这种情况会导致内存溢出.
+     * 测试自定义key对象hashcode, 导致map中存储key值相同的多个元素.这种情况会导致程序紊乱, 内存溢出.
      */
     @Test
     public void testMap(){

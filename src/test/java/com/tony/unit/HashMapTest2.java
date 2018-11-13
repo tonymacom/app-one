@@ -1,5 +1,7 @@
 package com.tony.unit;
 
+import org.junit.Test;
+
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -11,7 +13,11 @@ import java.util.Iterator;
  */
 public class HashMapTest2 {
 
-    public static void main(String[] args) {
+    /**
+     * 测试hashmap 链表存储.
+     */
+    @Test
+    public void testMap() {
         Country india = new Country("India", 1000);
         Country japan = new Country("Japan", 10000);
         Country france = new Country("France", 2000);
