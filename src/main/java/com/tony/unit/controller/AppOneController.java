@@ -2,6 +2,8 @@ package com.tony.unit.controller;
 
 import com.tony.unit.Vo.ObjParams;
 import com.tony.unit.base.ResponseData;
+import com.tony.unit.pojo.ThridProps;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -9,6 +11,10 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 public class AppOneController {
+
+    @Autowired
+    ThridProps.WechatProp wechatProp;
+
 
     @RequestMapping(value = "/output/{str}")
     public ResponseData outInputString(@PathVariable(value = "str") String str){
