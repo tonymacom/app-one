@@ -14,4 +14,10 @@ public class Content {
     private String code;
     private String name_cn;
     private String name_en;
+
+    public Content(String code,String name_cn,String name_en){
+        this.code = code;
+        this.name_cn = name_cn;
+        this.name_en = name_en;
+    }
 }

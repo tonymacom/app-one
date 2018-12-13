@@ -1,6 +1,7 @@
 package com.tony.unit;
 
 import com.alibaba.fastjson.JSON;
+import com.google.common.collect.ImmutableList;
 import com.tony.unit.po.Content;
 import com.tony.unit.po.Dictionary;
 import lombok.SneakyThrows;
@@ -82,6 +83,28 @@ public class CollectionTest {
 
 //        System.out.println("a""b");
 
+    }
+
+    @Test
+    @SneakyThrows
+    public void test3(){
+
+        List<Content> list = ImmutableList.of(
+                new Content("CN","中国","china"),
+                new Content("CH","瑞典","ruidian")
+        );
+
+        //orElse 无论是否匹配到, 都会执行getElseContent
+        Content content = list.stream().filter( dic -> dic.getCode().equals("CN")).findFirst().orElse(getElseContent());
+        System.out.println("-------content1:"+ content.toString());
+        //orElseGet 只有在没有匹配到的时候执行getElseContent
+        Content content2 = list.stream().filter( dic -> dic.getCode().equals("CN")).findFirst().orElseGet(()->getElseContent());
+        System.out.println("-------content2:"+ content2.toString());
+    }
+
+    public Content getElseContent(){
+        System.out.println("执行此方法");
+        return new Content("AB","AB_CN","AB_EN");
     }
 
 }
