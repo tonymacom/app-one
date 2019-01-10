@@ -107,4 +107,21 @@ public class CollectionTest {
         return new Content("AB","AB_CN","AB_EN");
     }
 
+
+    /**
+     * 其中有一个id为空, 调用max()方法会NullPointerException
+     */
+    @Test
+    @SneakyThrows
+    public void test4(){
+
+        List<Content> list = ImmutableList.of(
+                new Content(1,"CN","中国","china"),
+                new Content("CH","瑞典","ruidian")
+        );
+
+        int max = list.stream().mapToInt(Content::getId).max().getAsInt();
+        System.out.println(max);
+    }
+
 }
