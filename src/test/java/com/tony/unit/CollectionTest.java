@@ -10,10 +10,7 @@ import org.junit.Test;
 import org.springframework.util.ResourceUtils;
 
 import java.io.File;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -122,6 +119,25 @@ public class CollectionTest {
 
         int max = list.stream().mapToInt(Content::getId).max().getAsInt();
         System.out.println(max);
+    }
+
+    @Test
+    public void test5(){
+//        List<Long> list= ImmutableList.of(1L,2L,3L); //不能排序
+        List<Long> list= new ArrayList<>();
+        list.add(2L);
+        list.add(1L);
+        list.add(3L);
+
+//        list.sort((o1,o2)->o1<o2?1:-1);
+
+//        list.sort(Comparator.comparing(Long::longValue));
+
+//        list.sort(Comparator.comparing((v1,v2)->(int)(v1-v2));
+
+        list.sort(Comparator.naturalOrder());
+
+        list.forEach(System.out::println);
     }
 
 }
