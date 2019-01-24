@@ -26,6 +26,8 @@ public class LombokTest {
         ClassA classB =  ClassA.builder().id(1).name("aa").build();
         Assert.assertEquals(classA,classB);
 
+        System.out.println("aa");
+
     }
 
 
